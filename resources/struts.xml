@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+
+	<package name="default" extends="struts-default" namespace="/">
+
+		<action name="add"
+			class="com.inge.pizza.view.ContactAction" method="add">
+			<result name="success" type="chain">connect</result>
+			<result name="input" type="chain">connect</result>
+		</action>
+
+		<action name="delete"
+			class="com.inge.pizza.view.ContactAction" method="delete">
+			<result name="success" type="chain">connect</result>
+		</action>
+		
+		<action name="deletePizzaCustom"
+			class="com.inge.pizza.view.PizzaAction" method="delete">
+			<result name="success" type="chain">listSelect</result>
+		</action>
+		
+		<action name="deletePizza"
+			class="com.inge.pizza.view.PizzaAction" method="delete">
+			<result name="success" type="chain">main</result>
+		</action>
+
+		<action name="customPizza" 
+		         class="com.inge.pizza.view.IngredientAction" method="populate">
+			<result name="populate" type="chain">listSelect</result>
+		</action>
+		
+		<action name="createPizza" 
+		         class="com.inge.pizza.view.PizzaAction" method="add">
+			<result name="success" type="chain">listSelect</result>
+		</action>
+		
+		<action name="addPizza" 
+		         class="com.inge.pizza.view.PizzaAction" method="add">
+			<result name="success" type="chain">main</result>
+		</action>
+		 
+		 <action name="listSelect"
+			class="com.inge.pizza.view.IngredientAction">
+			<result name="success">customPizza.jsp</result>
+		</action>
+		  
+		<action name="main"
+			class="com.inge.pizza.view.PizzaAction">
+			<result name="success">mainPage.jsp</result>
+		</action>
+		
+		<action name="connect"
+			class="com.inge.pizza.view.PizzaAction">
+			<result name="success">mainPage.jsp</result>
+		</action>
+	</package>
+</struts>
