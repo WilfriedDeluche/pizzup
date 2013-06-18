@@ -15,7 +15,7 @@
 			jdbc:mysql://localhost:8889/test
 		</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password"></property>
+		<property name="connection.password">root</property>
 
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
