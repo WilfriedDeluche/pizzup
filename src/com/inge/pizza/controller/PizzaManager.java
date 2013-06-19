@@ -5,11 +5,13 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.classic.Session;
 
+import com.inge.pizza.model.Contact;
 import com.inge.pizza.model.Ingredient;
 import com.inge.pizza.model.Pizza;
 import com.inge.pizza.util.HibernateUtil;
 
 public class PizzaManager {
+	
 	public Pizza add(Pizza pizza) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
@@ -28,6 +30,8 @@ public class PizzaManager {
 		session.getTransaction().commit();
 		return pizza;
 	}
+	
+	
 
 	public List<Pizza> list() {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
