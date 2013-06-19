@@ -49,14 +49,14 @@ public class ContactManager extends HibernateUtil {
 		return contacts;
 	}
 	
-	public boolean isIdentifier(String firstName, String password){
+	public boolean isIdentifier(String emailId, String password){
 		
 		// on recupere la liste des contacts		
 		List<Contact> contacts = list(); 
 		
-		// On parcours la liste et on teste les entrées du formulaire
+		// On parcours la liste et on teste les entrees du formulaire
 		for (int i = 0; i < contacts.size(); i++) {
-			if(firstName.equalsIgnoreCase(contacts.get(i).getFirstName()) & password.equalsIgnoreCase(contacts.get(i).getPassword())) {
+			if(emailId.equalsIgnoreCase(contacts.get(i).getEmailId()) & password.equalsIgnoreCase(contacts.get(i).getPassword())) {
 				return true;
 			}
 		}
