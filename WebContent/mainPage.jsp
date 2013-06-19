@@ -18,7 +18,6 @@
 	<title>MainPage</title>
 </head>
 <body>
-<<<<<<< HEAD
 <s:if test="%{#session['authentification']=='true'}" >
 	<h1>Contact Manager</h1>
 	<s:actionerror/>
