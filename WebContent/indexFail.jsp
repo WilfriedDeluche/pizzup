@@ -11,10 +11,6 @@
 </head>
 <body>
 	<h1>L'identifiant ou le mot de passe est incorrect.</h1>
-	<s:form action="loginContact" method="post">
-		<s:textfield name="contact.emailId" label="Email" size="20"/>
-		<s:password name="contact.password" label="Mot de passe" size="20"/>
-		<s:submit value="Se connecter" align="center"/>
-	</s:form>
+	<jsp:include page="LoginForm.jsp" />
 </body>
 </html>
