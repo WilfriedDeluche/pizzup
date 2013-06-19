@@ -56,9 +56,16 @@
 			<result name="success">mainPage.jsp</result>
 		</action>
 		
-		<action name="connect"
-			class="com.inge.pizza.view.PizzaAction">
+		<action name="loginContact"
+			class="com.inge.pizza.view.ContactAction" method="identifierUtilisateurs">
 			<result name="success">mainPage.jsp</result>
+			<result name="error">indexFail.jsp</result>
 		</action>
+		
+		<action name="deconnexion"
+			class="com.inge.pizza.view.ContactAction" method="deleteSession">
+			<result name="success">index.jsp</result>
+		</action>
+		
 	</package>
 </struts>

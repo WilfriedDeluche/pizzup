@@ -19,6 +19,7 @@ public class Contact implements Serializable{
 	private String firstName;
 	private String lastName;
 	private String emailId;
+	private String password;
 	private String cellNo;
 	private Date birthDate;
 	private String website;
@@ -42,6 +43,10 @@ public class Contact implements Serializable{
 	@Column(name="email_id")
 	public String getEmailId() {
 		return emailId;
+	}
+	@Column(name="password")
+	public String getPassword() {
+		return password;
 	}
 	@Column(name="cell_no")
 	public String getCellNo() {
@@ -70,6 +75,9 @@ public class Contact implements Serializable{
 	}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public void setCellNo(String cellNo) {
 		this.cellNo = cellNo;
