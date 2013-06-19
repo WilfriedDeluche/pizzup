@@ -1,10 +1,12 @@
 package com.inge.pizza.view;
 
 import java.util.List;
+import java.util.Map;
 
 
 import com.inge.pizza.controller.ContactManager;
 import com.inge.pizza.model.Contact;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -14,6 +16,8 @@ public class ContactAction extends ActionSupport {
 	private Contact contact;
 	private List<Contact> contactList;
 	private Long id;
+	
+	private boolean identificationUtilisateur;
 
 	private ContactManager linkController;
 
@@ -68,4 +72,41 @@ public class ContactAction extends ActionSupport {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String identifierUtilisateurs(){
+		
+		ActionContext.getContext().getParameters();
+		
+		//On récupère les données du formulaire
+		String firstName = contact.getFirstName();
+		String password = contact.getPassword();
+
+		
+		// On interroge le model
+		identificationUtilisateur = linkController.isIdentifier(firstName, password);
+		
+		// Test métier si l'identification est OK
+		if (identificationUtilisateur == true) {
+			 
+			// on récupère la session courante
+			Map session = ActionContext.getContext().getSession();
+			
+			// on renseigne la session
+			session.put("authentification","true");
+			session.put("nomUtilisateur",contact.getFirstName());
+			session.put("erreur", "noErreur");
+			System.out.println("Vous êtes loggué avec succès enjoy :)");
+ 
+			return SUCCESS;
+		}
+		return ERROR;	
+	}
+	
+	public String deleteSession() {
+		Map session = ActionContext.getContext().getSession();
+        session = ActionContext.getContext().getSession();
+        session.clear();
+        return SUCCESS;
+    }
+	 
 }

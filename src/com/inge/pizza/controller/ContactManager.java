@@ -8,6 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.classic.Session;
 
 import com.inge.pizza.model.Contact;
+import com.inge.pizza.model.Pizza;
 import com.inge.pizza.util.HibernateUtil;
 
 
@@ -46,5 +47,21 @@ public class ContactManager extends HibernateUtil {
 		}
 		session.getTransaction().commit();
 		return contacts;
+	}
+	
+	public boolean isIdentifier(String firstName, String password){
+		
+		// on recupere la liste des contacts		
+		List<Contact> contacts = list(); 
+		
+		// On parcours la liste et on teste les entrées du formulaire
+		for (int i = 0; i < contacts.size(); i++) {
+			if(firstName.equalsIgnoreCase(contacts.get(i).getFirstName()) & password.equalsIgnoreCase(contacts.get(i).getPassword())) {
+				return true;
+			}
+		}
+		
+		
+		return false;
 	}
 }
