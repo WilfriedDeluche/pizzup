@@ -77,25 +77,25 @@ public class ContactAction extends ActionSupport {
 		
 		ActionContext.getContext().getParameters();
 		
-		//On récupère les données du formulaire
-		String firstName = contact.getFirstName();
+		//On recupere les donnees du formulaire
+		String emailId = contact.getEmailId();
 		String password = contact.getPassword();
 
 		
 		// On interroge le model
-		identificationUtilisateur = linkController.isIdentifier(firstName, password);
+		identificationUtilisateur = linkController.isIdentifier(emailId, password);
 		
-		// Test métier si l'identification est OK
+		// Test metier si l'identification est OK
 		if (identificationUtilisateur == true) {
 			 
-			// on récupère la session courante
+			// on recupere la session courante
 			Map session = ActionContext.getContext().getSession();
 			
 			// on renseigne la session
 			session.put("authentification","true");
-			session.put("nomUtilisateur",contact.getFirstName());
+			session.put("nomUtilisateur",contact.getEmailId());
 			session.put("erreur", "noErreur");
-			System.out.println("Vous êtes loggué avec succès enjoy :)");
+			System.out.println("Vous etes loggue avec succes, enjoy :)");
  
 			return SUCCESS;
 		}

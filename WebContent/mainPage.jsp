@@ -113,7 +113,7 @@
 <s:else>
 	<h1>Veuillez-vous connecter pour accéder à cette page</h1>
 	<s:form action="loginContact" method="post">
-		<s:textfield name="contact.firstName" label="Identifiant (Prénom)" size="20"/>
+		<s:textfield name="contact.emailId" label="Email" size="20"/>
 		<s:password name="contact.password" label="Mot de passe" size="20"/>
 		<s:submit value="Se connecter" align="center"/>
 	</s:form>
