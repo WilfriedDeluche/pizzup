@@ -15,7 +15,7 @@
 			background-color: #ffee55;
 		}
 	</style>
-	<title>Contact Manager - Struts2 Hibernate Example</title>
+	<title>Pizza composée</title>
 </head>
 <body>
 

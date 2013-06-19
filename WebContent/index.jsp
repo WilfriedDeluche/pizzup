@@ -6,23 +6,15 @@
 		body, input{
 			font-family: Calibri, Arial;
 		}
-		table#contact {
-			border-collapse: collapse;
-			width:550px;
-		}
-		th {
-			height: 40px;
-			background-color: #ffee55;
-		}
 	</style>
-	<title>Contact Manager - Struts2 Hibernate Example</title>
+	<title>Login</title>
 </head>
 <body>
-
-<h1>Bienvenue</h1>
-
-<s:form action="connect" method="post">
-	<s:submit value="Se connecter" align="center"/>
-</s:form>
+	<h1>Page de connexion</h1>
+	<s:form action="loginContact" method="post">
+		<s:textfield name="contact.firstName" label="Identifiant (Prénom)" size="20"/>
+		<s:password name="contact.password" label="Mot de passe" size="20"/>
+		<s:submit value="Se connecter" align="center"/>
+	</s:form>
 </body>
 </html>
