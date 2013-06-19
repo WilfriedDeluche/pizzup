@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 19 Juin 2013 à 20:58
+-- Généré le: Mer 19 Juin 2013 à 23:50
 -- Version du serveur: 5.6.12
 -- Version de PHP: 5.3.15
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `created`, `firstname`, `lastname`, `password`, `email_id`, `cell_no`, `birthdate`, `website`) VALUES
-(3, NULL, 'nicolas', NULL, 'nicolas', NULL, NULL, NULL, NULL);
+(3, NULL, 'nicolas', NULL, 'nicolas', 'nicolas.bernadine@ingesup.com', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
