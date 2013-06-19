@@ -18,6 +18,7 @@
 	<title>MainPage</title>
 </head>
 <body>
+<<<<<<< HEAD
 <s:if test="%{#session['authentification']=='true'}" >
 	<h1>Contact Manager</h1>
 	<s:actionerror/>
@@ -49,7 +50,7 @@
 		<s:hidden name="pizza.ingredient3" value="3"/>
 		<s:hidden name="pizza.basePrice" value="3"/>
 		<s:hidden name="pizza.name" value="pizza au fromage"/>
-		<image src="http://roadsmag.com/wp-content/uploads/2013/05/pizza.jpg" width="100" height="85" />
+		<img src="http://roadsmag.com/wp-content/uploads/2013/05/pizza.jpg" width="100" height="85" />
 		<s:submit value="Ajouter pizza au fromage" align="center"/>
 	</s:form>
 	
@@ -59,13 +60,14 @@
 		<s:hidden name="pizza.ingredient3" value="3"/>
 		<s:hidden name="pizza.basePrice" value="3"/>
 		<s:hidden name="pizza.name" value="pizza aux fruits de mer"/>
-		<image src="http://images.4ever.eu/data/674xX/aliments-et-boissons/[images.4ever.eu]%20pizza%20156600.jpg" width="100" height="85" />
+		<img src="http://images.4ever.eu/data/674xX/aliments-et-boissons/[images.4ever.eu]%20pizza%20156600.jpg" width="100" height="85" />
 		<s:submit value="Ajouter pizza au fruits de mer" align="center"/>
 	</s:form>
 	
 	<h2>Panier</h2>
 	
 	<table id="pizza" border="1">
+
 	<tr>
 		<th>Nom</th>
 		<th>Ingredient 1</th>
