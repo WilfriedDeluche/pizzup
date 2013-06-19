@@ -25,19 +25,6 @@
 	<s:form action="deconnexion" method="post">
 		<s:submit value="Déconnexion" align="center"/>
 	</s:form>
-	<!--
-	<s:form action="add" method="post">
-		<s:textfield name="contact.firstName" label="Firstname"/>
-		<s:textfield name="contact.lastName" label="Lastname"/>
-		<s:textfield name="contact.emailId" label="Email"/>
-		<s:textfield name="contact.cellNo" label="Cell No."/>
-		<s:textfield name="contact.website" label="Homepage"/>
-		<s:textfield name="contact.birthDate" label="Birthdate"/>
-		<s:submit value="Add Contact" align="center"/>
-	</s:form>
-	<s:form action="customPizza" method="post">
-		<s:submit value="Creer ma pizza" align="center"/>
-	</s:form>-->
 	
 	<s:form action="customPizza" method="post">
 		<s:submit value="Creer ma pizza" align="center"/>
@@ -75,40 +62,30 @@
 		<th>Total</th>
 		<th>Supprimer</th>
 	</tr>
+	
+	<s:set var="sumTotal" value="0" />
+	<s:set var="total" value="0 />"/>
+	
 	<s:iterator value="pizzaList" var="pizza">
 		<tr>
+			<s:set var="total" value="#pizza[0].ingredient1Class.price + #pizza[0].ingredient2Class.price + #pizza[0].ingredient3Class.price + #pizza[0].basePrice" />
+			
 			<td><s:property value="#pizza[0].name"/></td>
 			<td><s:property value="#pizza[0].ingredient1Class.name"/></td>
 			<td><s:property value="#pizza[0].ingredient2Class.name"/></td>
 			<td><s:property value="#pizza[0].ingredient3Class.name"/></td>
-			<td><s:property value="#pizza[0].ingredient1Class.price + #pizza[0].ingredient2Class.price + #pizza[0].ingredient3Class.price + #pizza[0].basePrice"/> €</td>
+			<td><s:property value="#total"/> €</td>
 			<td><a href="deletePizza?id=<s:property value="#pizza[0].id"/>">supprimer</a></td>
+			
+			<s:set var="sumTotal" value="#sumTotal + #total" />
 		</tr>	
 	</s:iterator>
-	</table>
-	
-	<!--
-	<table id="contact" border="1">
-	<tr>
-		<th>Name</th>
-		<th>Email</th>
-		<th>Cell No.</th>
-		<th>Birthdate</th>
-		<th>Homepage</th>
-		<th>Delete</th>
-	</tr>
-	<s:iterator value="contactList" var="contact">
 		<tr>
-			<td><s:property value="lastName"/>, <s:property value="firstName"/> </td>
-			<td><s:property value="emailId"/></td>
-			<td><s:property value="cellNo"/></td>
-			<td><s:property value="birthDate"/></td>
-			<td><a href="<s:property value="website"/>">link</a></td>
-			<td><a href="delete?id=<s:property value="id"/>">delete</a></td>
-		</tr>	
-	</s:iterator>
+			<td colspan="4">Total du panier</td>
+			<td><s:property value="#sumTotal"/> €</td>
+			<td><a href="#">Encaisser</a></td>
+		</tr>
 	</table>
-	-->
 </s:if>
 <s:else>
 	<h1>Veuillez-vous connecter pour accéder à cette page</h1>
