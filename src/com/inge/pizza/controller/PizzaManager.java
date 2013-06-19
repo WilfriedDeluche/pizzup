@@ -17,6 +17,7 @@ public class PizzaManager {
 		session.getTransaction().commit();
 		return pizza;
 	}
+	
 	public Pizza delete(Long id) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
