@@ -65,13 +65,13 @@ public class ContactAction extends ActionSupport {
 
 	public String execute() {
 		this.contactList = linkController.list();
-		this.pizzaList = linkController.listPizza();
+		/*this.pizzaList = linkController.listPizza();
 		
 		ingredientsList = new HashMap<String, String>();
 		for(int i=0; i<ingredientList.size();i++){
 			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " �");
 		}
-		System.out.println("ok");
+		System.out.println("ok");*/
 		return SUCCESS;
 	}
 
