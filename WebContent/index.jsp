@@ -14,7 +14,7 @@
 		    padding: 20px 30px 10px;
 		}
 		
-		#loginContact table {
+		#loginContact table, #linkCreateUser table {
 			margin: auto;
 		}
 		
@@ -29,7 +29,7 @@
 		    width: 220px;
 		}
 		
-		#submit-connexion {
+		#submit-connexion, #submit-registration {
 			border-radius: 7px 7px 7px 7px;
 		    border-style: solid;
 		    cursor: pointer;
@@ -37,6 +37,13 @@
 		    margin: 5px;
 		    text-align: center;
 		    width: 370px;
+		}
+		
+		#linkCreateUser {
+			background-color: #F2445B;
+			margin-left: -8px;
+		    margin-right: -8px;
+		    padding: 20px 30px 10px;
 		}
 	</style>
 	<title>Login</title>

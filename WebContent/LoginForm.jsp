@@ -7,5 +7,5 @@
 </s:form>
 
 <s:form action="linkCreateUser" method="post">
-	<s:submit value="S'inscrire" align="left"/>
+	<s:submit value="S'inscrire" align="center" id="submit-registration" />
 </s:form>
