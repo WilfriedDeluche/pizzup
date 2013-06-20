@@ -241,7 +241,7 @@
 	</tr>
 	
 	<s:set var="sumTotal" value="0" />
-	<s:set var="total" value="0 />"/>
+	<s:set var="total" value="0" />
 	
 	<s:iterator value="pizzaList" var="pizza">
 		<tr>
@@ -260,7 +260,7 @@
 		<tr>
 			<td colspan="4" class="bold total">TOTAL DU PANIER</td>
 			<td class="bold"><s:property value="#sumTotal"/> €</td>
-			<td><a href="#"><img src="http://kr.cdn4.123rf.com/168nwm/ratoca/ratoca1110/ratoca111000257/10985626-paying-hand-icon.jpg" width="21" height="19" title="Encaisser" /></a></td>
+			<td><a href="viderPanier"><img src="http://kr.cdn4.123rf.com/168nwm/ratoca/ratoca1110/ratoca111000257/10985626-paying-hand-icon.jpg" width="21" height="19" title="Encaisser" /></a></td>
 		</tr>
 	</table>
 </s:if>

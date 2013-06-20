@@ -5,3 +5,7 @@
 	<s:password name="contact.password" label="Mot de passe" size="20"/>
 	<s:submit value="Se connecter" align="center" id="submit-connexion"/>
 </s:form>
+
+<s:form action="linkCreateUser" method="post">
+	<s:submit value="S'inscrire" align="left"/>
+</s:form>

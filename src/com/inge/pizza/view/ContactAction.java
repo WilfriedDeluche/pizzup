@@ -76,7 +76,7 @@ public class ContactAction extends ActionSupport {
 	}
 
 	public String add() {
-		System.out.println("toto");
+		System.out.println("contact créer");
 		System.out.println(getContact());
 		try {
 			linkController.add(getContact());

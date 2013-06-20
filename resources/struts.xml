@@ -67,5 +67,25 @@
 			<result name="success">index.jsp</result>
 		</action>
 		
+		<action name="linkCreateUser" 
+		         class="com.inge.pizza.view.ContactAction">
+			<result name="success">inscriptionUser.jsp</result>
+		</action>
+		
+		<action name="createContact" 
+		         class="com.inge.pizza.view.ContactAction" method="add">
+			<result name="success">index.jsp</result>
+		</action>		
+		
+		<action name="viderPanier"
+			class="com.inge.pizza.view.PizzaAction" method="viderPanier">
+			<result name="success" type="chain">main</result>
+		</action>
+		
+		<action name="viderPanier2"
+			class="com.inge.pizza.view.PizzaAction" method="viderPanier">
+			<result name="success" type="chain">customPizza</result>
+		</action>
+
 	</package>
 </struts>
