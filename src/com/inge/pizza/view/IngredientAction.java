@@ -32,13 +32,10 @@ public class IngredientAction extends ActionSupport {
 	public String execute() {
 		this.ingredientList = linkController.list();
 		this.pizzaList = linkController.listPizza();
-		System.out.println(pizzaList.size());
-		for(int i=0; i<pizzaList.size();i++){
-		//	System.out.println(pizzaList.get(i).getId());
-		}
+		
 		ingredientsList = new HashMap<String, String>();
 		for(int i=0; i<ingredientList.size();i++){
-			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " €");
+			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " ï¿½");
 		}
 		return SUCCESS;
 	}
@@ -48,7 +45,7 @@ public class IngredientAction extends ActionSupport {
 		this.pizzaList = linkController.listPizza();
 		ingredientsList = new HashMap<String, String>();
 		for(int i=0; i<ingredientList.size();i++){
-			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " €");
+			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " ï¿½");
 		}
 		return "populate";
 	}
