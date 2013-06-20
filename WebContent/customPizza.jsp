@@ -6,13 +6,55 @@
 		body, input{
 			font-family: Calibri, Arial;
 		}
-		table#contact {
+		table#pizza {
 			border-collapse: collapse;
-			width:550px;
+			width:800px;
+		}
+		th, td {
+			padding: 8px 10px 4px;
 		}
 		th {
-			height: 40px;
-			background-color: #ffee55;
+			height: 35px;
+			background-color: #DEDEDE;
+		}
+		td {
+			font-size: 14px;
+		}
+		
+		td.total {
+			text-align: right;
+		}
+		
+		.bold {
+			font-weight: bold;
+		}
+		
+		#addPizza {
+			border: 1px solid #DEDEDE;
+		    border-radius: 9px 9px 9px 9px;
+		    float: left;
+		    margin-right: 10px;
+		    text-align: center;
+		    width: 180px;
+		}
+		
+		#addPizza span {
+			display: inline-block;
+		    line-height: 14px;
+		    padding-top: 10px;
+		}
+		
+		#addPizza table {
+			width: 100%;
+		}
+		
+		input[type="submit"] {
+			font-size: 13px;
+			cursor: pointer;
+		}
+		
+		#deconnexion {
+			float: right;
 		}
 	</style>
 	<title>Pizza composée</title>
@@ -59,12 +101,14 @@
 </tr>
 <s:iterator value="pizzaList" var="pizza">
 	<tr>
-		<td><s:property value="#pizza[0].name"/></td>
+		<td class="bold"><s:property value="#pizza[0].name"/></td>
 		<td><s:property value="#pizza[0].ingredient1Class.name"/></td>
 		<td><s:property value="#pizza[0].ingredient2Class.name"/></td>
 		<td><s:property value="#pizza[0].ingredient3Class.name"/></td>
 		<td><s:property value="#pizza[0].ingredient1Class.price + #pizza[0].ingredient2Class.price + #pizza[0].ingredient3Class.price + #pizza[0].basePrice"/> €</td>
-		<td><a href="deletePizza?id=<s:property value="#pizza[0].id"/>">supprimer</a></td>
+		<td><a href="deletePizza?id=<s:property value="#pizza[0].id"/>">
+			<img src="http://socialprofiles.zenfs.com/images/585a5509e64b18c3a86df8040108997d_48.png" width="17" height="17" title="Supprimer" />
+		</a></td>
 	</tr>	
 </s:iterator>
 </table>
