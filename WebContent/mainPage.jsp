@@ -83,7 +83,7 @@
 		<tr>
 			<td colspan="4">Total du panier</td>
 			<td><s:property value="#sumTotal"/> €</td>
-			<td><a href="#">Encaisser</a></td>
+			<td><a href="viderPanier">Encaisser</a></td>
 		</tr>
 	</table>
 </s:if>

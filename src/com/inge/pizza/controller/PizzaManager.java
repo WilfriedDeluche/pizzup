@@ -51,4 +51,15 @@ public class PizzaManager {
 		session.getTransaction().commit();
 		return pizzas;
 	}
+	
+	public void deletePanier() {
+		
+		// on recupere la liste des contacts
+		
+						
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			session.beginTransaction();
+			session.delete("from Pizza");
+			session.getTransaction().commit();
+	}
 }
