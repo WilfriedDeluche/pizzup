@@ -29,6 +29,13 @@
 			font-weight: bold;
 		}
 		
+		.custom-pizza {
+			background-color: #5F79C7;
+			margin-left: -8px;
+		    margin-right: -8px;
+		    padding: 20px 30px 10px;
+		}
+		
 		#addPizza {
 			border: 1px solid #DEDEDE;
 		    border-radius: 9px 9px 9px 9px;
@@ -53,7 +60,7 @@
 			cursor: pointer;
 		}
 		
-		#deconnexion {
+		#deconnexion, #main {
 			float: right;
 		}
 	</style>
@@ -61,32 +68,37 @@
 </head>
 <body>
 
-<h1>Ma Pizza Personalisée</h1>
-<s:actionerror/>
-
 <s:form action="main" method="post">
 	<s:submit value="Page d'accueil" align="center"/>
 </s:form>
 
-<s:form action="createPizza" method="post">
-	<s:select label="Ajouter un ingredient" 
-		headerKey="0" headerValue="Selectionnez votre ingredient"
-		list="ingredientsList" 
-		name="pizza.ingredient1" />
-	<s:select label="Ajouter un ingredient" 
-		headerKey="-1" headerValue="Selectionnez votre ingredient"
-		list="ingredientsList" 
-		name="pizza.ingredient2" />
-	<s:select label="Ajouter un ingredient" 
-		headerKey="-1" headerValue="Selectionnez votre ingredient"
-		list="ingredientsList" 
-		name="pizza.ingredient3" />
-	<s:hidden name="pizza.basePrice" value="3"></s:hidden>
-	<s:hidden name="pizza.name" value="Pizza personnalisee"></s:hidden>
-	<s:submit value="Creer ma pizza" align="center"/>
-</s:form>
-+ prix de la garniture (3€)
+<h1>PIZZ'UP</h1>
 
+<h2>Ma Pizza Personalisée</h2>
+<s:actionerror/>
+
+<div class="custom-pizza">
+
+	<s:form action="createPizza" method="post">
+		<s:select label="Ajouter un ingredient" 
+			headerKey="0" headerValue="Selectionnez votre ingredient"
+			list="ingredientsList" 
+			name="pizza.ingredient1" />
+		<s:select label="Ajouter un ingredient" 
+			headerKey="-1" headerValue="Selectionnez votre ingredient"
+			list="ingredientsList" 
+			name="pizza.ingredient2" />
+		<s:select label="Ajouter un ingredient" 
+			headerKey="-1" headerValue="Selectionnez votre ingredient"
+			list="ingredientsList" 
+			name="pizza.ingredient3" />
+		<s:hidden name="pizza.basePrice" value="3"></s:hidden>
+		<s:hidden name="pizza.name" value="Pizza personnalisee"></s:hidden>
+		<s:submit value="Creer ma pizza" align="center"/>
+	</s:form>
+	<span>+ prix de la garniture (3€)</span>
+
+</div>
 
 <h2>Panier</h2>
 
