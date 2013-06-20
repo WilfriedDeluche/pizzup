@@ -66,4 +66,9 @@ public class PizzaAction extends ActionSupport {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String viderPanier() {
+		linkController.deletePanier();
+		return SUCCESS;
+	}
 }

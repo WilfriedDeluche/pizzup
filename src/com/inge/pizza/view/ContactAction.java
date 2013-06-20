@@ -1,11 +1,15 @@
 package com.inge.pizza.view;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
 import com.inge.pizza.controller.ContactManager;
+import com.inge.pizza.controller.IngredientManager;
 import com.inge.pizza.model.Contact;
+import com.inge.pizza.model.Ingredient;
+import com.inge.pizza.model.Pizza;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -16,7 +20,39 @@ public class ContactAction extends ActionSupport {
 	private Contact contact;
 	private List<Contact> contactList;
 	private Long id;
+	private List<Ingredient> ingredientList;
 	
+	private IngredientManager linkController2;
+	
+	public List<Ingredient> getIngredientList() {
+		return ingredientList;
+	}
+
+	public void setIngredientList(List<Ingredient> ingredientList) {
+		this.ingredientList = ingredientList;
+	}
+
+	private HashMap<String, String> ingredientsList;
+	private List<Pizza> pizzaList;
+	
+	
+
+	public HashMap<String, String> getIngredientsList() {
+		return ingredientsList;
+	}
+
+	public void setIngredientsList(HashMap<String, String> ingredientsList) {
+		this.ingredientsList = ingredientsList;
+	}
+
+	public List<Pizza> getPizzaList() {
+		return pizzaList;
+	}
+
+	public void setPizzaList(List<Pizza> pizzaList) {
+		this.pizzaList = pizzaList;
+	}
+
 	private boolean identificationUtilisateur;
 
 	private ContactManager linkController;
@@ -24,10 +60,17 @@ public class ContactAction extends ActionSupport {
 	public ContactAction() {
 		System.out.println("ok");
 		linkController = new ContactManager();
+		linkController2 = new IngredientManager();
 	}
 
 	public String execute() {
 		this.contactList = linkController.list();
+		this.pizzaList = linkController.listPizza();
+		
+		ingredientsList = new HashMap<String, String>();
+		for(int i=0; i<ingredientList.size();i++){
+			ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " �");
+		}
 		System.out.println("ok");
 		return SUCCESS;
 	}
@@ -97,6 +140,14 @@ public class ContactAction extends ActionSupport {
 			session.put("erreur", "noErreur");
 			System.out.println("Vous etes loggue avec succes, enjoy :)");
  
+			this.pizzaList = linkController.listPizza();
+			this.ingredientList = linkController2.list();
+			
+			ingredientsList = new HashMap<String, String>();
+			for(int i=0; i<ingredientList.size();i++){
+				ingredientsList.put(String.valueOf(ingredientList.get(i).getId()), ingredientList.get(i).getName() + " - " + String.valueOf(ingredientList.get(i).getPrice()) + " �");
+			}
+			
 			return SUCCESS;
 		}
 		return ERROR;	
