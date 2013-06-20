@@ -64,4 +64,27 @@ public class ContactManager extends HibernateUtil {
 		
 		return false;
 	}
+	
+public List<Pizza> listPizza() {
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		List<Pizza> pizzas = null;
+		try {
+
+				
+			pizzas = (List<Pizza>)session.createQuery("from Pizza as p" +
+					 " join p.ingredient1Class" + //).list(); // +
+					 " join p.ingredient2Class" +
+					 " join p.ingredient3Class").list();
+			
+		} catch (HibernateException e) {
+			System.out.println("bad");
+			e.printStackTrace();
+			session.getTransaction().rollback();
+		}
+		System.out.println("ok");
+		session.getTransaction().commit();
+		return pizzas;
+	}
 }
