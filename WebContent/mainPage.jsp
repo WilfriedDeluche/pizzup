@@ -103,6 +103,13 @@
 		    text-align: center;
 		    width: 370px;
 		}
+		
+		#linkCreateUser {
+			background-color: #F2445B;
+			margin-left: -8px;
+		    margin-right: -8px;
+		    padding: 20px 30px 10px;
+		}
 	</style>
 	<title>MainPage</title>
 </head>

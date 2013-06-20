@@ -14,7 +14,7 @@
 		    padding: 20px 30px 10px;
 		}
 		
-		#createContact table {
+		#createContact table, #linkCreateUser table {
 			margin: auto;
 		}
 		
@@ -29,7 +29,7 @@
 		    width: 220px;
 		}
 		
-		#submit-connexion {
+		#submit-connexion, #submit-registration {
 			border-radius: 7px 7px 7px 7px;
 		    border-style: solid;
 		    cursor: pointer;
